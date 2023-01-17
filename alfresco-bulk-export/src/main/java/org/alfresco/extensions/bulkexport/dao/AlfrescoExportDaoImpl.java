@@ -83,9 +83,10 @@ public class AlfrescoExportDaoImpl implements AlfrescoExportDao
     private final PermissionService permissionService;
     private final VersionService versionService;
         
+    //BW 01/17/2023 We need tag data for Common Knowledge
     private QName ignoreAspectQname[] = 
     {
-            ContentModel.ASPECT_TAGGABLE
+            //ContentModel.ASPECT_TAGGABLE
     };
     
     private String ignoreAspectPrefix[] = 
@@ -96,13 +97,14 @@ public class AlfrescoExportDaoImpl implements AlfrescoExportDao
     //SA 10/03/2022 Commented out ContentModel.PROP_NODE_UUID from this list as we need this to make sure we have the correct mapping between a document name and 
     //its uuid. The name might not necessarily be unique but uuid would be.
     //This is only so we can export from ldms to AoDocs
+    //BW 01/17/2023 We need tag data for Common Knowledge
     private QName ignorePropertyQname[] = 
     { 
             ContentModel.PROP_NODE_DBID, 
             //ContentModel.PROP_NODE_UUID, 
             ContentModel.PROP_CATEGORIES,
             ContentModel.PROP_CONTENT,
-            ContentModel.ASPECT_TAGGABLE,
+            //ContentModel.ASPECT_TAGGABLE,
             ContentModel.PROP_VERSION_LABEL,
             QName.createQName(NamespaceService.CONTENT_MODEL_1_0_URI, VersionModel.PROP_VERSION_TYPE),
             QName.createQName(NamespaceService.CONTENT_MODEL_1_0_URI, "lastThumbnailModification")
